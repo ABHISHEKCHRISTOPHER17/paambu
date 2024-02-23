@@ -1,4 +1,12 @@
-olor("black")
+from turtle import Screen
+from snake import Snake
+from food import Food
+from scoreboard import Scoreboard
+import time
+
+screen = Screen()
+screen.setup(width=600, height=600)
+screen.bgcolor("black")
 screen.title("My Snake Game")
 screen.tracer(0)
 
@@ -33,6 +41,7 @@ while game_is_on:
     for segment in snake.segments:
         if segment == snake.head:
             game_is_on = False
+            scoreboard.reset()
             pass
         elif snake.head.distance(segment) < 10:
             game_is_on = False
